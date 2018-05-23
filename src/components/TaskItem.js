@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 
 class TaskItem extends Component {
   render() {
+    var {tasks, index} = this.props;
+    //var tasks = this.props.tasks.tasks
+    //var index = this.props.tasks.index
     return (
       <tr>
-          <td>1</td>
-          <td>Học lập trình</td>
+          <td>{index}</td>
+          <td>{tasks.name}</td>
           <td class="text-center">
-              <span class="label label-success">
-                          Kích Hoạt
+              <span class={tasks.status?'label label-success':'label label-danger'}>
+                          {tasks.status?'Kích Hoạt':"Chưa kích hoạt"}
                       </span>
           </td>
           <td class="text-center">
